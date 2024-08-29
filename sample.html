@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haptic Feedback Example</title>
+    <style>
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<button id="vibrateButton">Click Me</button>
+
+<script>
+    const button = document.getElementById('vibrateButton');
+
+    button.addEventListener('click', () => {
+        // Check if the Vibration API is supported
+        if (navigator.vibrate) {
+            // Trigger a vibration pattern: [duration in milliseconds]
+            navigator.vibrate(200); // Vibrate for 200ms
+        } else {
+            console.log('Vibration API is not supported on this device.');
+        }
+    });
+</script>
+
+</body>
+</html>
